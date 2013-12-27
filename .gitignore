@@ -2,6 +2,11 @@
 .DS_Store
 */build/*
 *.pbxuser
+Build
+build
+*/build/*
+*.pbxuser
+*.xcworkspace
 !default.pbxuser
 *.mode1v3
 !default.mode1v3
@@ -10,12 +15,9 @@
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
-profile
 *.moved-aside
 DerivedData
 .idea/
 *.hmap
 *.xccheckout
 
-#CocoaPods
-Pods
