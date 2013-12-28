@@ -11,7 +11,7 @@ Xsed='/usr/bin/sed -e 1s/^X//'
 ECHO="/bin/echo"
 file="$0"
 thisdir=`$ECHO "X$file" | $Xsed -e 's%/[^/]*$%%'`
-opensslsrcdir="openssl-src"
+opensslsrcdir="openssl-xcode/openssl"
 
 
 # Find the directory that this script lives in.
@@ -55,6 +55,8 @@ fi
 absdir=`cd "$thisdir" && pwd`
 test -n "$absdir" && thisdir="$absdir"
 
+$thisdir/setup_submodule.sh "$thisdir"
+
 srcdir="$thisdir/$opensslsrcdir"
 srcpkg="$thisdir/$opensslsrc_pkg"
 
@@ -76,8 +78,6 @@ else
   $ECHO "Error! $srcpkg not found!"
 fi
 
-$ECHO "begin setup submodule"
-$thisdir/setup_submodule.sh "$thisdir"
 
 
 
